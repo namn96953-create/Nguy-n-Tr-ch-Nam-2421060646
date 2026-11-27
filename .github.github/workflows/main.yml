@@ -2,11 +2,10 @@ name: Multi-AI Collaboration
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened, reopened]
 
 jobs:
   orchestrate:
-    if: contains(github.event.issue.labels.*.name, 'ai-collab')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
